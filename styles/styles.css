@@ -16,8 +16,31 @@
     color: var(--colorLetraPrincipal);
 }
 
- a {
+a {
     text-decoration: none;
+}
+
+button.btn {
+    border: none;
+    background-color: var(--colorLetraSecundario);
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    text-transform: uppercase;
+    box-shadow: 1px 1px 1px #444444;
+    color: var(--colorLetraPrincipal);
+    transition: 0.5s ease-in-out;
+}
+
+button.btn:hover {
+    color: var(--colorLetraSecundario);
+    background-color: var(--colorLetraPrincipal);
+}
+
+h2.h2 {
+    color: var(--colorLetraSecundario);
+    text-align: center;
+    margin-bottom: 30px;
 }
 
 /* HEADER MENU */
@@ -46,7 +69,7 @@ div.header__icons-title {
 }
 
 h1.title {
-    width: 90%;
+    width: 95%;
     font-size: 1.4em;
     padding-left: 10px;
 }
@@ -177,38 +200,17 @@ main.main__asteriscos {
     align-items: center;
 }
 
-main.main__asteriscos h2.main__asteriscos-title {
-    color: var(--colorLetraSecundario);
-    text-align: center;
-    margin-bottom: 30px;
-}
-
 main.main__asteriscos button#btn_reset-asteriscos {
     margin-bottom: 30px;
-    border: none;
-    background-color: var(--colorLetraSecundario);
-    padding: 10px;
-    cursor: pointer;
-    border-radius: 5px;
-    text-transform: uppercase;
-    box-shadow: 1px 1px 1px #444444;
-    color: var(--colorLetraPrincipal);
-    transition: 0.5s ease-in-out;
     display: none;
-}
-
-main.main__asteriscos button#btn_reset-asteriscos:hover{
-    color: var(--colorLetraSecundario);
-    background-color: var(--colorLetraPrincipal);
 }
 
 main.main__asteriscos form#form_asteriscos {
     margin-bottom: 20px;
     display: flex;
     justify-content: space-between;
-    width: 90%;
+    width: 95%;
 }
-
 main.main__asteriscos form#form_asteriscos input#input_asteriscos {
     border: none;
     border-radius: 5px;
@@ -219,24 +221,36 @@ main.main__asteriscos form#form_asteriscos input#input_asteriscos {
     font-weight: bold;
 }
 
-main.main__asteriscos form#form_asteriscos button#btn_submit-asteriscos {
-    border: none;
-    background-color: var(--colorLetraSecundario);
-    padding: 10px;
-    cursor: pointer;
-    border-radius: 5px;
-    text-transform: uppercase;
-    box-shadow: 1px 1px 1px #444444;
-    color: var(--colorLetraPrincipal);
-    transition: 0.5s ease-in-out;
-}
-
-main.main__asteriscos form#form_asteriscos button#btn_submit-asteriscos:hover {
-    color: var(--colorLetraSecundario);
-    background-color: var(--colorLetraPrincipal);
-}
-
 main.main__asteriscos div#contenedor_piramide {
+    width: 100%;
+    height: 450px;
+    border: 4px solid var(--colorNegro);
+    border-radius: 5px;
+    overflow: scroll;
+    text-align: center;
+    box-shadow: 1px 1px 1px #444444;
+}
+
+/* FONDO ALEATORIO */
+main.main__fondo {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 0;
+}
+
+main.main__fondo button#btn_fondo-aleatorio {
+    margin-bottom: 20px;
+}
+
+main.main__fondo button#btn_reseteo-fondo {
+    display: none;
+    margin-bottom: 10px;
+}
+
+main.main__fondo div#fondo {
     width: 100%;
     height: 450px;
     border: 4px solid var(--colorNegro);
@@ -318,6 +332,4 @@ main.main__asteriscos div#contenedor_piramide {
     span#burger_icon {
         display: none;
     }
-    
-    
 }

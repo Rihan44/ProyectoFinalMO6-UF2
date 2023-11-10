@@ -53,4 +53,25 @@ if(btn_reset_asteriscos !== null){
 }
 
 
+//  FONDO ALEATORIO
+let btn_fondo_aleatorio = document.querySelector('#btn_fondo-aleatorio');
+let fondo = document.querySelector('#fondo');
+let btn_resetear_fondo = document.querySelector('#btn_reseteo-fondo');
+
+if(btn_fondo_aleatorio !== null) {
+    btn_fondo_aleatorio.addEventListener('click', () => {
+        let red = parseInt(Math.random()*255);
+        let green = parseInt(Math.random()*255);
+        let blue = parseInt(Math.random()*255);
+        btn_resetear_fondo.style.display = 'block';
+        fondo.style.height = '415px';
+
+        fondo.style.backgroundColor = `rgb(${red},${green},${blue})`;
+    });
+
+    btn_resetear_fondo.addEventListener('click', () => {
+        location.reload();
+    });
+}
+
 
