@@ -1,11 +1,3 @@
-// INDEX
-let btn_repositorio = document.querySelector('.main__btn-repositorio');
-
-if(btn_repositorio !== null){
-    btn_repositorio.addEventListener('click', () => {
-        window.open('https://github.com/Rihan44/ProyectoFinalMO6-UF2', '_blank');
-    });
-}
 
 // MENU DESPLEGABLE 
 let btn_burger = document.querySelector('#burger_icon');
@@ -28,15 +20,25 @@ btn_close.addEventListener('click', () => {
     menu_mobile.style.top = '-120px';
 });
 
+// INDEX
+let btn_repositorio = document.querySelector('.main__btn-repositorio');
+
+if(btn_repositorio !== null){
+    btn_repositorio.addEventListener('click', () => {
+        window.open('https://github.com/Rihan44/ProyectoFinalMO6-UF2', '_blank');
+    });
+}
+
 // ASTERISCOS
+let main_asteriscos = document.querySelector('.main__asteriscos');
 
-let numero_asteriscos = 0;
-let input_asteriscos = document.querySelector('#input_asteriscos');
-let form_asteriscos = document.querySelector('#form_asteriscos');
-let contenedor_piramide = document.querySelector('#contenedor_piramide');
-let btn_reset_asteriscos = document.querySelector('#btn_reset-asteriscos'); 
+if(main_asteriscos !== null) {
+    let numero_asteriscos = 0;
+    let input_asteriscos = document.querySelector('#input_asteriscos');
+    let form_asteriscos = document.querySelector('#form_asteriscos');
+    let contenedor_piramide = document.querySelector('#contenedor_piramide');
+    let btn_reset_asteriscos = document.querySelector('#btn_reset-asteriscos'); 
 
-if(form_asteriscos !== null) {
     form_asteriscos.addEventListener('submit', (e) => {
         e.preventDefault();
         btn_reset_asteriscos.style.display = 'block';
@@ -53,20 +55,22 @@ if(form_asteriscos !== null) {
             contenedor_piramide.innerHTML += "<br>";
         }
     });
-}
 
-if(btn_reset_asteriscos !== null){
-    btn_reset_asteriscos.addEventListener('click', ()=>{
-        location.reload();
-    });
+    if(btn_reset_asteriscos !== null){
+        btn_reset_asteriscos.addEventListener('click', ()=>{
+            location.reload();
+        });
+    }
 }
 
 //  FONDO ALEATORIO
-let fondo = document.querySelector('#fondo');
-let btn_fondo_aleatorio = document.querySelector('#btn_fondo-aleatorio');
-let btn_resetear_fondo = document.querySelector('#btn_reseteo-fondo');
+let main_fondo = document.querySelector('.main__fondo');
 
-if(btn_fondo_aleatorio !== null) {
+if(main_fondo !== null) {
+    let fondo = document.querySelector('#fondo');
+    let btn_fondo_aleatorio = document.querySelector('#btn_fondo-aleatorio');
+    let btn_resetear_fondo = document.querySelector('#btn_reseteo-fondo');
+
     btn_fondo_aleatorio.addEventListener('click', () => {
         let red = parseInt(Math.random()*255);
         let green = parseInt(Math.random()*255);
@@ -83,11 +87,11 @@ if(btn_fondo_aleatorio !== null) {
 }
 
 // ADIVINAR NUMERO
+let main_adivina = document.querySelector('.main__adivina');
 
-let form_adivina = document.querySelector('#form_adivina');
-
-if(form_adivina !== null) {
+if(main_adivina  !== null) {
     let numero_aleatorio = parseInt(Math.random() * 10) + 1;
+    let form_adivina = document.querySelector('#form_adivina');
 
     form_adivina.addEventListener('submit', (e) => {
         e.preventDefault();
