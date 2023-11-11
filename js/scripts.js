@@ -108,6 +108,27 @@ if(form_adivina !== null) {
             });
         }
     });
-
 }
+
+// PAR / IMPAR
+let form_par_impar = document.querySelector('#form_par-impar');
+
+if(form_par_impar !== null){
+    let main__par_impar = document.querySelector('.main__par-impar');
+    let input_par_impar = document.querySelector('#input_par-impar'); 
+    let parrafo_par_impar = document.createElement('p');
+    parrafo_par_impar.classList.add('parrafo__par-impar');
+    main__par_impar.appendChild(parrafo_par_impar);
+
+    form_par_impar.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        if(input_par_impar.value % 2 === 0) {
+            parrafo_par_impar.innerText = `El número ${input_par_impar.value} es par`;
+        } else {
+            parrafo_par_impar.innerText = `El número ${input_par_impar.value} es impar`;
+        }
+    })
+}
+
 

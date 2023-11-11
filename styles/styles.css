@@ -50,6 +50,7 @@ input.input {
     padding-left: 10px;
     padding-right: 10px;
     outline-style: none;
+    padding: 10px;
     font-weight: bold;
 }
 
@@ -274,11 +275,6 @@ main.main__adivina {
     justify-content: center;
     align-items: center;
     padding-bottom: 0;
-    overflow-y: scroll;
-
-    & form#form_adivina input#input_adivina {
-        padding: 10px;
-    }
 
     & p#adivina-numero_pista {
         margin-top: 50px;
@@ -290,6 +286,23 @@ main.main__adivina {
     & button#btn_jugar-nuevo {
         display: none;
         margin-top: 25px;
+    }
+}
+
+/* PAR / IMPAR */
+main.main__par-impar {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 0;
+
+    & p.parrafo__par-impar {
+        margin-top: 120px;
+        font-size: 1.8em;
+        text-transform: uppercase;
+        text-align: center;
     }
 }
 
