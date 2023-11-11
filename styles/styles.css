@@ -56,7 +56,7 @@ input.input {
 
 /* HEADER MENU */
 header.header {
-    position: sticky;
+    position: fixed;
     width: 100%;
     height: auto;
     box-shadow: -1px 1px 6px 2px rgba(49, 49, 49, 0.58);
@@ -157,6 +157,7 @@ header.header {
 /* MAIN */
 main.main {
     padding: 10px;
+    padding-top: 120px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -209,6 +210,7 @@ footer.footer {
 /* ASTERISCOS */
 main.main__asteriscos {
     padding: 20px;
+    padding-top: 120px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -241,6 +243,7 @@ main.main__asteriscos {
 /* FONDO ALEATORIO */
 main.main__fondo {
     padding: 20px;
+    padding-top: 120px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -270,6 +273,7 @@ main.main__fondo {
 /* ADIVINA NUMERO */
 main.main__adivina {
     padding: 20px;
+    padding-top: 120px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -292,6 +296,7 @@ main.main__adivina {
 /* PAR / IMPAR */
 main.main__par-impar {
     padding: 20px;
+    padding-top: 120px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -305,6 +310,51 @@ main.main__par-impar {
         text-align: center;
     }
 }
+
+/* TABLERO DE COLORES */
+main.main__colores {
+    padding: 20px;
+    padding-top: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 0;
+    width: 100%;
+
+    & p#parrafo_color {
+        margin-top: 30px;
+        font-size: 1.2em;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    & button#btn_reset_colores{
+        margin-bottom: 20px;
+    }
+
+
+    & div#contendor_paleta {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        height: auto;
+        justify-content: center;
+
+        & button {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            margin: 3px;
+            background-color: #F3F7F7;
+        }
+    }
+}
+
+
+/* VALIDAR PASSWORD */
 
 
 /* RESPONSIVE */

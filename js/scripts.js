@@ -111,10 +111,10 @@ if(form_adivina !== null) {
 }
 
 // PAR / IMPAR
-let form_par_impar = document.querySelector('#form_par-impar');
+let main__par_impar = document.querySelector('.main__par-impar');
 
-if(form_par_impar !== null){
-    let main__par_impar = document.querySelector('.main__par-impar');
+if(main__par_impar !== null){
+    let form_par_impar = document.querySelector('#form_par-impar');
     let input_par_impar = document.querySelector('#input_par-impar'); 
     let parrafo_par_impar = document.createElement('p');
     parrafo_par_impar.classList.add('parrafo__par-impar');
@@ -129,6 +129,35 @@ if(form_par_impar !== null){
             parrafo_par_impar.innerText = `El número ${input_par_impar.value} es impar`;
         }
     })
+}
+
+// PALETA DE COLORES
+let main_colores = document.querySelector('.main__colores');
+
+if(main_colores !== null) {
+    const num_botones = 192;
+
+    let contenedor_paleta = document.querySelector('#contendor_paleta');
+    let btn_reset_colores = document.querySelector('#btn_reset_colores');
+    let parrafo_color = document.querySelector('#parrafo_color');
+
+    for(let i = 0; i < num_botones; i++) {
+        let red = parseInt(Math.random()*255);
+        let green = parseInt(Math.random()*255);
+        let blue = parseInt(Math.random()*255);
+        let boton_paleta = document.createElement('button');
+
+        boton_paleta.style.backgroundColor = `rgb(${red},${green},${blue})`;
+        contenedor_paleta.appendChild(boton_paleta);
+
+        boton_paleta.addEventListener('click', () => {
+            parrafo_color.style.color = boton_paleta.style.backgroundColor;
+        })
+    }
+
+    btn_reset_colores.addEventListener('click', () => {
+        location.reload();
+    });
 }
 
 
