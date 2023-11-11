@@ -1,9 +1,18 @@
+// INDEX
+let btn_repositorio = document.querySelector('.main__btn-repositorio');
+
+if(btn_repositorio !== null){
+    btn_repositorio.addEventListener('click', () => {
+        window.open('https://github.com/Rihan44/ProyectoFinalMO6-UF2', '_blank');
+    });
+}
+
 // MENU DESPLEGABLE 
-const btn_burger = document.querySelector('#burger_icon');
-const btn_close = document.querySelector('#close_icon');
-const nav_menu = document.querySelector('.header__menu')
-const menu_mobile = document.querySelector('#menu_mobile');
-const menu_pc = document.querySelector('#menu_pc');
+let btn_burger = document.querySelector('#burger_icon');
+let btn_close = document.querySelector('#close_icon');
+let nav_menu = document.querySelector('.header__menu')
+let menu_mobile = document.querySelector('#menu_mobile');
+let menu_pc = document.querySelector('#menu_pc');
 
 btn_burger.addEventListener('click', () =>{
     btn_close.style.display = 'block';
@@ -52,10 +61,9 @@ if(btn_reset_asteriscos !== null){
     });
 }
 
-
 //  FONDO ALEATORIO
-let btn_fondo_aleatorio = document.querySelector('#btn_fondo-aleatorio');
 let fondo = document.querySelector('#fondo');
+let btn_fondo_aleatorio = document.querySelector('#btn_fondo-aleatorio');
 let btn_resetear_fondo = document.querySelector('#btn_reseteo-fondo');
 
 if(btn_fondo_aleatorio !== null) {
@@ -74,4 +82,32 @@ if(btn_fondo_aleatorio !== null) {
     });
 }
 
+// ADIVINAR NUMERO
+
+let form_adivina = document.querySelector('#form_adivina');
+
+if(form_adivina !== null) {
+    let numero_aleatorio = parseInt(Math.random() * 10) + 1;
+
+    form_adivina.addEventListener('submit', (e) => {
+        e.preventDefault();
+        let input_adivina = document.querySelector('#input_adivina');
+        let parrafo_pista = document.querySelector('#adivina-numero_pista');
+        let btn_jugar_nuevo = document.querySelector('#btn_jugar-nuevo');
+        
+        if(numero_aleatorio > input_adivina.value) {
+            parrafo_pista.innerHTML = 'Mas mayor';
+        } else if(numero_aleatorio < input_adivina.value) {
+            parrafo_pista.innerHTML = 'Mas pequeño';
+        } else if (numero_aleatorio == input_adivina.value) {
+            parrafo_pista.innerHTML = 'ENHORABUENA, HAS GANADO!, QUIERES JUGAR DE NUEVO?';
+            btn_jugar_nuevo.style.display = 'block';
+
+            btn_jugar_nuevo.addEventListener('click', () => {
+                location.reload();
+            });
+        }
+    });
+
+}
 
