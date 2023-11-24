@@ -43,7 +43,6 @@ if(main_asteriscos !== null) {
         e.preventDefault();
         btn_reset_asteriscos.style.display = 'block';
         contenedor_piramide.style.height = '380px';
-    
         do {
             numero_asteriscos = parseInt(input_asteriscos.value);
         } while (isNaN(numero_asteriscos || numero_asteriscos <= 0))
@@ -164,4 +163,44 @@ if(main_colores !== null) {
     });
 }
 
+/* fibonacci */
+let main_fibonacci = document.querySelector('.main__fibonacci');
+
+if(main_fibonacci !== null) {
+    let form_fibonacci = document.querySelector('#form_fibonacci');
+    let input_fibonacci = document.querySelector('#input_fibonacci');
+    let contenedor_fibonacci = document.querySelector('#contenedor_fibonacci');
+    let btn_reset_fibonacci = document.querySelector('#btn_reset-fibonacci'); 
+
+    form_fibonacci.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        btn_reset_fibonacci.style.display = 'block';
+        contenedor_fibonacci.style.height = '380px';
+
+        function fibonacci(numero) {
+            let fib_array = [0, 1];
+          
+            for (let i = 2; i < numero; i++) {
+              var next_fib = fib_array[i - 1] + fib_array[i - 2];
+              fib_array.push(next_fib);
+            }
+          
+            return fib_array;
+          }
+          
+          let resultado = fibonacci(input_fibonacci.value);
+
+          resultado.forEach((num, index) => {
+            contenedor_fibonacci.innerHTML += "<br>";
+            contenedor_fibonacci.innerHTML += `${index}: ${num}`;
+          })
+    });
+
+    if(btn_reset_fibonacci !== null){
+        btn_reset_fibonacci.addEventListener('click', ()=>{
+            location.reload();
+        });
+    }
+}
 
